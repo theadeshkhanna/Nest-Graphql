@@ -1,0 +1,69 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  """Example field (placeholder)"""
+  id: Int!
+  name: String!
+  email: String!
+  posts: [Post!]
+  created_at: String!
+  updated_at: String!
+}
+
+type Post {
+  """Example field (placeholder)"""
+  id: Int!
+  title: String!
+  content: String!
+  isPublished: Boolean!
+  user: User!
+  created_at: String!
+  updated_at: String!
+}
+
+type Query {
+  users: [User!]!
+  user(id: Int!): User!
+  posts: [Post!]!
+  post(id: Int!): Post!
+  usersPost(userId: Int!): [Post!]!
+}
+
+type Mutation {
+  createUser(createUserInput: CreateUserInput!): User!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+  removeUser(id: Int!): User!
+  createPost(createPostInput: CreatePostInput!): Post!
+  updatePost(updatePostInput: UpdatePostInput!): Post!
+  makePostPublished(id: Int!): Post!
+  makePostUnpublished(id: Int!): Post!
+  removePost(id: Int!): Post!
+}
+
+input CreateUserInput {
+  name: String!
+  email: String!
+}
+
+input UpdateUserInput {
+  name: String
+  email: String
+  id: Int!
+}
+
+input CreatePostInput {
+  title: String!
+  content: String!
+  userId: Int!
+  isPublished: Boolean!
+}
+
+input UpdatePostInput {
+  title: String
+  content: String
+  userId: Int
+  isPublished: Boolean
+  id: Int!
+}
