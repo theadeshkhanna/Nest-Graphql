@@ -1,0 +1,9 @@
+services:
+  mysqldb:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_DATABASE: 'nesting'
+    ports:
+      - 3306:3306

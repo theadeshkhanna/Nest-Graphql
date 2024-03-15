@@ -17,6 +17,7 @@ export class PostService {
     post.user = user;
     post.title = createPostInput.title;
     post.content = createPostInput.content;
+    post.isPublished = false;
 
     return this.postRepository.save(post);
   }

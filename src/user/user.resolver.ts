@@ -43,6 +43,8 @@ export class UserResolver {
     if (!user) {
       throw new HttpException('User not found', HttpStatus.NOT_FOUND);
     }
-    return this.userService.remove(id);
+
+    await this.userService.remove(id);
+    return user;
   }
 }

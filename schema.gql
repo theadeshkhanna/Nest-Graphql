@@ -57,7 +57,7 @@ input CreatePostInput {
   title: String!
   content: String!
   userId: Int!
-  isPublished: Boolean!
+  isPublished: Boolean
 }
 
 input UpdatePostInput {

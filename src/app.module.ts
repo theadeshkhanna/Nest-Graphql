@@ -8,12 +8,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Post } from './post/entities/post.entity';
 import { UserModule } from './user/user.module';
 import { User } from './user/entities/user.entity';
-import { ConfigModule } from '@nestjs/config';
-import * as process from 'process';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
     GraphQLModule.forRoot({
       driver: ApolloDriver,
       autoSchemaFile: 'schema.gql',
@@ -21,10 +18,10 @@ import * as process from 'process';
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
-      port: +process.env.DATABASE_PORT,
-      username: process.env.DATABASE_USER,
-      password: process.env.DATABASE_PASSWORD,
-      database: process.env.DATABASE_NAME,
+      port: 3306,
+      username: 'root',
+      password: 'password',
+      database: 'nesting',
       entities: [Post, User],
       synchronize: true,
     }),

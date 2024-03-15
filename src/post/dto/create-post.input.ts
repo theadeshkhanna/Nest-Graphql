@@ -11,6 +11,6 @@ export class CreatePostInput {
   @Field(() => Int)
   userId: number;
 
-  @Field(() => Boolean)
+  @Field(() => Boolean, { nullable: true })
   isPublished: boolean;
 }
